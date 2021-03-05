@@ -1,0 +1,8 @@
+sudo : required
+services:
+  - docker
+before_install:
+  - docker build -t rajibhazarika/docker-react -f Dockerfile_dev .
+
+script:
+  - docker run rajibhazarika/docker-react npm run test -- --coverage
